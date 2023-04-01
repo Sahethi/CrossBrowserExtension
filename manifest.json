@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "CBX",
-    "description": "This extension detects whole script injection and bypass frame-busting.",
+    "description": "This extension is to detect multiple attacks like XSS, iFrame Detection.",
     "version": "1.0",
   
     "browser_action": {
@@ -16,7 +16,14 @@
       "all_frames": true
     }
     ],
-    
+
+
+    "icons": {
+        "16": "icons/icon16.png",
+        "48": "icons/icon48.png",
+        "128": "icons/icon128.png"
+      },
+
     "permissions": [
       "webRequest",
       "webRequestBlocking",
