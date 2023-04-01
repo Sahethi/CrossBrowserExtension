@@ -2,7 +2,7 @@ var el = document.createElement("script");
 el.textContent = "if (top !== self) {window.self = window.top;}";
 document.documentElement.appendChild(el);
 
-//Random Variable to Identify Script
+//Script for iFrame Detection
 const r = (Math.random() + 1).toString(36).substring(2);
 const r2 = (Math.random() + 1).toString(36).substring(2);
 const rid = r + r2;
@@ -62,16 +62,17 @@ function iframeFinder() {
             frame.style.filter = "brightness(20%)";
 
             //Style Warning Div
-            warning.style.fontFamily = "Arial, Helvetica, sans-serif";
+            warning.style.fontFamily = "Open Sans, Helvetica, sans-serif";
             warning.style.fontSize = "14px";
 
-            warning.style.color = "white";
-            warning.style.backgroundColor = "rgb(206,53,40)";
+            warning.style.color = "#721C23";
+            warning.style.backgroundColor = "rgb(248, 215, 217)";
 
-            warning.style.width = "100%";
-            warning.style.padding = "20px";
+            warning.style.width = "50%";
+            warning.style.padding = "15px";
             warning.style.margin = "0px";
             warning.style.zIndex = "2147483647";
+            warning.style.borderRadius="15px";
 
             warning.style.position = "fixed";
             warning.style.bottom = "0";
@@ -101,9 +102,9 @@ function iframeFinder() {
             let warningAccept = document.createElement("button");
             let warningNever = document.createElement("button");
 
-            warningHeading.textContent = "Warning: Potential Security Risk Ahead";
+            warningHeading.textContent = "Security Alert";
             if (fakeUI()) warningHeading.textContent += " (Fake UI)";
-            warningText.textContent = "An iframe element is displaying content from the following URL: ";
+            warningText.textContent = "An iframe element URL: ";
             warningText2.textContent = "Please ensure you trust this URL before entering any sensitive information such as passwords, emails, or credit card details.";
 
             warningAccept.textContent = "Close Warning";
@@ -111,64 +112,65 @@ function iframeFinder() {
             warningNever.textContent = "Never Show Warnings On This Site";
 
             //Style Heading H2
-            warningHeading.style.fontFamily = "Arial, Helvetica, sans-serif";
-            warningHeading.style.color = "white";
+            warningHeading.style.fontFamily = "Open Sans, Helvetica, sans-serif";
+            warningHeading.style.color = "#721C23";
+            warningHeading.style.fontWeight = "bold";
 
-            warningHeading.style.fontSize = "18px";
-            warningHeading.style.fontWeight = "normal";
+            warningHeading.style.fontSize = "14px";
+            // warningHeading.style.fontWeight = "normal";
 
             warningHeading.style.margin = "0px";
-            warningHeading.style.marginBottom = "15px";
+            warningHeading.style.marginBottom = "10px";
             warningHeading.style.padding = "0px";
 
             //Style Parageaph p
-            warningText.style.fontFamily = "Arial, Helvetica, sans-serif";
-            warningText.style.color = "white";
+            warningText.style.fontFamily = "Open Sans, Helvetica, sans-serif";
+            warningText.style.color = "#721C23";
 
-            warningText.style.fontSize = "14px";
+            warningText.style.fontSize = "12px";
             warningText.style.fontWeight = "normal";
 
             warningText.style.margin = "0px";
-            warningText.style.marginRight = "5px";
-            warningText.style.marginBottom = "15px";
+            warningText.style.marginRight = "2px";
+            warningText.style.marginBottom = "10px";
             warningText.style.padding = "0px";
 
             warningText.style.display = "inline-block"; 
 
             //Style URLElement
-            urlElement.style.fontFamily = "Arial, Helvetica, sans-serif";
+            urlElement.style.fontFamily = "Open Sans, Helvetica, sans-serif";
             urlElement.style.fontWeight = "bold";
             urlElement.style.textDecoration = "underline";
-            urlElement.style.color = "white";
+            urlElement.style.color = "#721C23";
 
-            urlElement.style.fontSize = "14px";
+            urlElement.style.fontSize = "12px";
 
             urlElement.style.margin = "0px";
-            urlElement.style.marginBottom = "15px";
+            urlElement.style.marginBottom = "10px";
             urlElement.style.padding = "0px";
 
             urlElement.style.display = "inline-block";
 
             //Style Parageaph 2 p
-            warningText2.style.fontFamily = "Arial, Helvetica, sans-serif";
-            warningText2.style.color = "white";
+            warningText2.style.fontFamily = "Open Sans, Helvetica, sans-serif";
+            warningText2.style.color = "#721C23";
 
-            warningText2.style.fontSize = "14px";
+            warningText2.style.fontSize = "12px";
             warningText2.style.fontWeight = "normal";
 
             warningText2.style.margin = "0px";
-            warningText2.style.marginBottom = "15px";
+            warningText2.style.marginBottom = "10px";
             warningText2.style.padding = "0px";
 
             //Style Accept Button
-            warningAccept.style.fontFamily = "Arial, Helvetica, sans-serif";
-            warningAccept.style.color = "black";
+            warningAccept.style.fontFamily = "Open Sans, Helvetica, sans-serif";
+            warningAccept.style.color = "white";
 
-            warningAccept.style.fontSize = "14px";
+            warningAccept.style.fontSize = "12px";
             warningAccept.style.fontWeight = "normal";
 
             warningAccept.style.background = "none";
-            warningAccept.style.backgroundColor = "white";
+            warningAccept.style.backgroundColor = "#721C23";
             warningAccept.style.border = "none";
             warningAccept.style.borderRadius = "5px";
 
@@ -180,14 +182,14 @@ function iframeFinder() {
             warningAccept.style.marginRight = "10px";
 
             //Style Never Button
-            warningNever.style.fontFamily = "Arial, Helvetica, sans-serif";
-            warningNever.style.color = "white";
+            warningNever.style.fontFamily = "Open Sans, Helvetica, sans-serif";
+            warningNever.style.color = "#721C23";
 
-            warningNever.style.fontSize = "14px";
+            warningNever.style.fontSize = "12px";
             warningNever.style.fontWeight = "normal";
 
             warningNever.style.background = "none";
-            warningNever.style.border = "solid 1px white";
+            warningNever.style.border = "solid 1px #721C23";
             warningNever.style.borderRadius = "5px";
 
             warningNever.style.marginTop = "2px";
