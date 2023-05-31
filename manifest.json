@@ -4,15 +4,18 @@
     "description": "This extension is to detect multiple attacks like XSS, iFrame Detection.",
     "version": "1.0",
   
-    "browser_action": {
+ 
+    "page_action": {
       "default_icon": "new_icon.png",
-      "default_popup" : "popup.html"
+      "default_popup": "popup.html"
     },
+
     "content_scripts": [
     {
-      "matches": ["*://*/*"],
+      
+      "matches": ["*://*/*","<all_urls>"],
       "run_at": "document_start",
-      "js": ["my_script.js"],
+      "js": ["my_script.js","tabnabbing/resemble.js","tabnabbing/try.js"],
       "all_frames": true
     }
     ],
@@ -28,10 +31,14 @@
       "webRequestBlocking",
       "<all_urls>",
       "notifications",
-      "storage"
+      "storage",
+      "activeTab",
+      "tabs",
+      "tabCapture",
+      "*://*/*"
     ],
     "background": {
-      "scripts": ["background.js","phishing.js"],
+      "scripts": ["background.js","tabnabbing/resemble.js","tabnabbing/try.js","tabnabbing/logic.js","phishing.js"],
       "persistent": true
     }
   }
