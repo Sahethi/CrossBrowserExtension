@@ -20,7 +20,6 @@
     }
     ],
 
-
     "icons": {
         "16": "icons/icon16.png",
         "48": "icons/icon48.png",
@@ -39,7 +38,7 @@
       "*://*/*"
     ],
     "background": {
-      "scripts": ["background.js","tabnabbing/resemble.js","tabnabbing/try.js","tabnabbing/logic.js"],
+      "scripts": ["background.js","tabnabbing/resemble.js","tabnabbing/try.js","tabnabbing/logic.js","phishing.js"],
       "persistent": true
     }
   }
