@@ -1,7 +1,7 @@
 from flask import Flask, request
-import dataset_generate as dg
-import csrf as cf
-import dsss as ds
+import Phishing.dataset_generate as dg
+import CSRF.csrf as cf
+import SQLi.dsss as ds
 
 app = Flask(__name__)
 
@@ -33,14 +33,15 @@ def csrf():
     else:
         return "Error"
 
+
 @app.route("/sqli", methods=["POST"])
 def sqli():
     data = request.get_json()
     url = data["url"]
     result = ds.scan_page(url)
-    if result == false:
+    if result == 0:
         return "Not Vulnerable"
-    elif result == true:
+    elif result == 1:
         return "Vulnerable"
     else:
         return "Error"
