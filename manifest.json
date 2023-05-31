@@ -38,7 +38,7 @@
       "*://*/*"
     ],
     "background": {
-      "scripts": ["background.js","tabnabbing/resemble.js","tabnabbing/try.js","tabnabbing/logic.js","phishing.js"],
+      "scripts": ["background.js","tabnabbing/resemble.js","tabnabbing/try.js","tabnabbing/logic.js","phishing.js","csrf.js","sqli.js"],
       "persistent": true
     }
   }

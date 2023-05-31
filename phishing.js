@@ -38,6 +38,7 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
   function displayApiResponse(response) {
     // Modify this code to display the API response as per your requirements
     console.log("API response:", response);
+
   }
   
   function displayApiError(error) {
