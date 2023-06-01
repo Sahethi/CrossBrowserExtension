@@ -1,3 +1,5 @@
+//var extensionBody = document.getElementById('extensionBody');
+
 chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
     if (changeInfo.status === 'complete') {
       // Tab has finished loading a new page
@@ -24,6 +26,7 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
         if (xhr.status === 200) {
           // Handle API response
           var response = JSON.parse(xhr.responseText);
+          //extensionBody.innerHTML = str(response);
           displayApiResponse(response);
         } else {
           // Handle API error

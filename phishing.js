@@ -1,3 +1,5 @@
+//var extensionBody = document.getElementById('extensionBody');
+
 chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
     if (changeInfo.status === 'complete') {
       // Tab has finished loading a new page
@@ -24,7 +26,8 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
         if (xhr.status === 200) {
           // Handle API response
           var response = JSON.parse(xhr.responseText);
-          displayApiResponse(response);
+          //extensionBody.innerHTML = str(response);
+          //displayApiResponse(response);
         } else {
           // Handle API error
           displayApiError(xhr.statusText);
@@ -35,14 +38,38 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
     xhr.send(payload);
   }
   
-  function displayApiResponse(response) {
-    // Modify this code to display the API response as per your requirements
-    console.log("API response:", response);
-
-  }
+  // function displayApiResponse(response) {
+  //   const popup = document.createElement('div');
+  //   popup.textContent = response; // Modify this to display the response data as desired
   
-  function displayApiError(error) {
-    // Modify this code to display the API error as per your requirements
-    console.error("API error:", error);
-  }
+  //   // Apply CSS styles to the popup
+  //   popup.style.position = 'fixed';
+  //   popup.style.bottom = '20px';
+  //   popup.style.right = '20px';
+  //   popup.style.backgroundColor = 'green';
+  //   popup.style.color = 'white';
+  //   popup.style.padding = '10px';
+  //   popup.style.borderRadius = '5px';
+  //   popup.style.zIndex = '9999';
   
+  //   // Append the popup to the body of the document
+  //   document.body.appendChild(popup);
+  // }
+  
+  // function displayApiError(error) {
+  //   const popup = document.createElement('div');
+  //   popup.textContent = 'API Error: ' + error;
+  
+  //   // Apply CSS styles to the popup
+  //   popup.style.position = 'fixed';
+  //   popup.style.bottom = '20px';
+  //   popup.style.right = '20px';
+  //   popup.style.backgroundColor = 'red';
+  //   popup.style.color = 'white';
+  //   popup.style.padding = '10px';
+  //   popup.style.borderRadius = '5px';
+  //   popup.style.zIndex = '9999';
+  
+  //   // Append the popup to the body of the document
+  //   document.body.appendChild(popup);
+  // }
