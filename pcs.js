@@ -1,4 +1,4 @@
-//var extensionBody = document.getElementById('extensionBody');
+var extensionBody = document.getElementById('extensionBody');
 
 chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
     if (changeInfo.status === 'complete') {
@@ -24,7 +24,7 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
       if (xhr.readyState === 4) {
         if (xhr.status === 200) {
           // Handle API response
-          var response = JSON.parse(xhr.responseText);
+          var response = xhr.responseText;
           //extensionBody.innerHTML = str(response);
           alert(response);
           displayApiResponse(response);
