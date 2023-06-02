@@ -37,7 +37,7 @@ def result():
     url = data["url"]
     result = []
     result_phishing = 1
-    result_phishing=(dg.predict(url))
+    # result_phishing=(dg.predict(url))
     print(result_phishing)
     if result_phishing == -1:
         result.append("Phishing")
@@ -55,7 +55,7 @@ def result():
         result.append("Not Vulnerable to SQLi")
     elif result_sqli == 1:
         result.append("Vulnerable to SQLi")
-    return str(result)
+    return result[0] + ", " + result[1] + ", " + result[2]
 
 
 # @app.route("/csrf", methods=["POST"])
