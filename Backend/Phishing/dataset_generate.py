@@ -1,5 +1,7 @@
 import ipaddress
+import pickle
 import re
+import urllib.request
 from bs4 import BeautifulSoup
 import socket
 import requests
@@ -8,8 +10,7 @@ import whois
 from datetime import date, datetime
 import time
 from dateutil.parser import parse as date_parse
-import numpy as np
-import pickle
+
 
 def diff_month(d1, d2):
     return (d1.year - d2.year) * 12 + d1.month - d2.month
@@ -363,7 +364,7 @@ def generate_data_set(url):
 
     # 26. web_traffic
     try:
-        rank = BeautifulSoup(requests.get(
+        rank = BeautifulSoup(urllib.request.urlopen(
             "http://data.alexa.com/data?cli=10&dat=s&url=" + url).read(), "xml").find("REACH")['RANK']
         rank = int(rank)
         if (rank < 100000):
@@ -423,8 +424,17 @@ def generate_data_set(url):
 
     return data_set
 
+
 def predict(url):
     features = []
     features = generate_data_set(url)
-    model = pickle.load(open('my_model.pickle', 'rb'))
-    return model.predict([features])[0]
+    print(features)
+    model1 = pickle.load(
+        open("/Users/ayushpattnaik/Documents/Developer/CrossBrowserExtension/Backend/Phishing/nn_model.pickle","rb")
+    )
+    model2= pickle.load(
+        open("/Users/ayushpattnaik/Documents/Developer/CrossBrowserExtension/Backend/Phishing/rf_model.pickle","rb")
+    )
+    return min(model1.predict([features])[0],model2.predict([features])[0])
+
+#print(predict("https://accout.smba.jp.peiyoujiaoyu.com/"))

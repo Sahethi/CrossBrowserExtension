@@ -1,2 +1,5 @@
 .vscode/settings.json
 .vscode*
+Backend/xsrfprobe-output
+Backend/xsrfprobe-output/*
+
