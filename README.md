@@ -32,18 +32,6 @@ This extension is backed by academic research and was published at IEEE:
 
 ---
 
-## 🛠️ Technologies Used
-
-- HTML5, CSS3, JavaScript (Vanilla)
-- Chrome Extension APIs (Manifest v3)
-- Machine Learning (Phishing Detection)
-- Static + Behavioral Analysis
-- Browser DOM & Event Listeners
-- Secure Local Storage
-- VirusTotal API (for Phishing analysis)
-
----
-
 ## 🚀 Getting Started
 
 ### 1. Clone the Repository
@@ -65,23 +53,34 @@ To load the extension in your browser:
 4. Browse and select the root directory of this project (where `manifest.json` is located)
 
 ---
+## System Architecture
+![Architecture Screenshot](screenshots/sysArch.png)
 
 ## 📸 Screenshots
-
-> Replace these with actual image paths or URLs once available
 
 ### XSS
 ![Popup Screenshot](screenshots/xss1.png)
 ![Popup Screenshot](screenshots/xss2.png)
 
 ### iFrame
-![iFram Alert](screenshots/iframe.png)
+![iFrame Alert](screenshots/iframe.png)
 
 ### Tabnabbing
 ![Tabnabbing](screenshots/tabnabbing.png)
 
 ### Phishing, CSRF, SQLi
 ![Phishing, CSRF, SQLi](screenshots/phishing.png)
+
+---
+## 🛠️ Technologies Used
+
+- HTML5, CSS3, JavaScript (Vanilla)
+- Chrome Extension APIs (Manifest v3)
+- Machine Learning (Phishing Detection)
+- Static + Behavioral Analysis
+- Browser DOM & Event Listeners
+- Secure Local Storage
+- VirusTotal API (for Phishing analysis)
 
 ---
 
